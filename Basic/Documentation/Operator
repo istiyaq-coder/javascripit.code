@@ -1,0 +1,346 @@
+# 📌 1️⃣ Types of Operators in JavaScript
+
+## Main Categories
+
+1. Arithmetic
+2. Assignment
+3. Comparison
+4. Logical
+5. Nullish / Optional
+6. Type
+7. Bitwise (rare but asked sometimes)
+
+---
+
+# 🔢 1. Arithmetic Operators
+
+```js
++  -  *  /  %  **  
+```
+
+### Basic Example
+
+```js
+5 + 2  // 7
+5 - 2  // 3
+5 * 2  // 10
+5 / 2  // 2.5
+5 % 2  // 1
+2 ** 3 // 8
+```
+
+---
+
+## ⚠ `+` is Special
+
+```js
+"5" + 2  // "52"
+"5" - 2  // 3
+```
+
+🧠 Rule:
+
+* `+` → prefers string
+* Others → force number conversion
+
+---
+
+## 🔥 Increment / Decrement
+
+```js
+let x = 5;
+
+x++  // Postfix
+++x  // Prefix
+```
+
+Difference:
+
+```js
+let a = 5;
+console.log(a++); // 5
+console.log(a);   // 6
+
+let b = 5;
+console.log(++b); // 6
+```
+
+🧠 Trick:
+
+* Postfix → return first, then increase
+* Prefix → increase first, then return
+
+Interview favorite.
+
+---
+
+# 🟰 2. Assignment Operators
+
+```js
+=   +=   -=   *=   /=   %=   **=
+```
+
+Example:
+
+```js
+let x = 10;
+x += 5; // 15
+```
+
+Equivalent to:
+
+```js
+x = x + 5;
+```
+
+---
+
+# ⚖ 3. Comparison Operators (VERY IMPORTANT)
+
+```js
+==   ===
+!=   !==
+>    <    >=    <=
+```
+
+---
+
+## 🔥 == vs ===
+
+```js
+5 == "5"  // true
+5 === "5" // false
+```
+
+🧠 Rule:
+Always use `===`
+
+---
+
+## ⚠ Weird Comparisons
+
+```js
+null == undefined // true
+null === undefined // false
+
+NaN === NaN // false 😱
+```
+
+To check NaN:
+
+```js
+Number.isNaN(value)
+```
+
+---
+
+# 🧠 4. Logical Operators
+
+```js
+&&  ||  !
+```
+
+---
+
+## 🔹 AND (&&)
+
+Returns first falsy value:
+
+```js
+true && "Hello"   // "Hello"
+false && "Hello"  // false
+```
+
+---
+
+## 🔹 OR (||)
+
+Returns first truthy value:
+
+```js
+"" || "Default" // "Default"
+```
+
+Used for defaults:
+
+```js
+const name = userInput || "Guest";
+```
+
+⚠ Problem:
+
+```js
+0 || 100 // 100 😱
+```
+
+Because `0` is falsy.
+
+---
+
+# 🆕 5. Nullish Coalescing (??)
+
+Modern and safer than `||`
+
+```js
+const value = userInput ?? "Default";
+```
+
+Difference:
+
+```js
+0 || 100   // 100 ❌
+0 ?? 100   // 0 ✅
+```
+
+🧠 Rule:
+`??` only checks for:
+
+* null
+* undefined
+
+Professional developers prefer `??`.
+
+---
+
+# ❓ 6. Ternary Operator
+
+```js
+condition ? value1 : value2;
+```
+
+Example:
+
+```js
+const result = age >= 18 ? "Adult" : "Minor";
+```
+
+Clean alternative to small if/else.
+
+⚠ Don’t over-nest ternaries.
+
+---
+
+# 🔎 7. typeof Operator
+
+```js
+typeof 10        // "number"
+typeof "hello"   // "string"
+typeof null      // "object" 😱 (bug)
+```
+
+---
+
+# 🔗 8. Optional Chaining (?.)
+
+Very important in modern JS.
+
+```js
+user?.address?.city
+```
+
+Prevents errors:
+
+```js
+Cannot read property of undefined
+```
+
+Professional frontend devs use this daily.
+
+---
+
+# 📦 9. Spread Operator (...)
+
+```js
+const arr = [1, 2, 3];
+const copy = [...arr];
+```
+
+For objects:
+
+```js
+const user = { name: "Ali" };
+const newUser = { ...user };
+```
+
+🔥 Used for shallow copy.
+
+---
+
+# 🧠 Operator Precedence (Hidden Trap)
+
+Example:
+
+```js
+3 + 4 * 2  // 11
+```
+
+Multiplication runs first.
+
+When unsure:
+
+```js
+(3 + 4) * 2
+```
+
+Real dev advice:
+Always use parentheses for clarity.
+
+---
+
+# ⚠ Advanced Tricky Cases
+
+### Case 1
+
+```js
+[] + []        // ""
+[] + {}        // "[object Object]"
+{} + []        // 0 (depends on context)
+```
+
+JS coercion madness.
+
+---
+
+### Case 2
+
+```js
+true + true  // 2
+true + false // 1
+```
+
+Booleans convert to numbers.
+
+---
+
+# 💡 Real Developer Tips
+
+✅ Use `===`
+✅ Use `??` instead of `||` for defaults
+✅ Avoid complex ternaries
+✅ Use optional chaining in nested data
+✅ Avoid relying on implicit coercion
+✅ Prefer explicit conversion
+
+---
+
+# 🛑 Common Mistakes
+
+❌ Using `==`
+❌ Forgetting falsy values
+❌ Using `||` when 0 is valid
+❌ Confusing prefix/postfix increment
+❌ Ignoring operator precedence
+
+---
+
+# 🎯 Interview Rapid-Fire Summary
+
+* `+` can concatenate or add
+* `===` checks value + type
+* `&&` returns first falsy
+* `||` returns first truthy
+* `??` checks only null/undefined
+* Prefix vs Postfix matters
+* JS has implicit coercion
+
+
