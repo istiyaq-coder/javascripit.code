@@ -1,0 +1,92 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full screen */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: serif;
+}
+
+/* Main container */
+#main {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: #222;
+  min-height: 100vh;
+}
+
+/* Form styling */
+form {
+  width: 200px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #ddd;
+  color: #000;
+  font-size: 14px;
+}
+
+/* Submit button */
+input[type="submit"] {
+  width: auto;
+  cursor: pointer;
+  background: #eee;
+  padding: 8px 15px;
+}
+
+/* Card */
+.card {
+  border-radius: 12px;
+  padding: 30px;
+  border: 2px solid #e3e3e3;
+  color: white;
+  width: 350px;
+}
+
+/* Profile circle */
+.profile {
+  border-radius: 50%;
+  margin-bottom: 30px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #e3e3e3;
+  overflow: hidden;
+}
+
+/* Image inside circle */
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text styling */
+.card h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.card h5 {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
