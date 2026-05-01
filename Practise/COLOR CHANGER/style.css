@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full screen */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: serif;
+}
+
+.box{
+    background-color: red;
+     width: 400px;
+  height: 400px;
+}
